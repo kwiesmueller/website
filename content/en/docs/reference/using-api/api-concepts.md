@@ -386,6 +386,8 @@ Some values of an object are typically generated before the object is persisted.
 
 {{< feature-state for_k8s_version="v1.16" state="beta" >}}
 
+{{< note >}}Starting with v1.18 Server Side Apply, if enabled, will track managed fields for all newly created objects.{{< /note >}}
+
 ### Introduction
 
 Server Side Apply helps users and controllers manage their resources via
