@@ -515,6 +515,9 @@ content type `application/apply-patch+yaml`) and `Update` (all other operations
 which modify the object). Both operations update the `managedFields`, but behave
 a little differently.
 
+{{< note >}}The apply content type `application/apply-patch+yaml` accepts both yaml **and** json,
+despite it's name.{{< /note >}}
+
 For instance, only the apply operation fails on conflicts while update does
 not. Also, apply operations are required to identify themselves by providing a
 `fieldManager` query parameter, while the query parameter is optional for update
@@ -626,8 +629,8 @@ case.
 
 With the Server Side Apply feature enabled, the `PATCH` endpoint accepts the
 additional `application/apply-patch+yaml` content type. Users of Server Side
-Apply can send partially specified objects to this endpoint. An applied config
-should always include every field that the applier has an opinion about.
+Apply can send partially specified objects as yaml or json to this endpoint.
+An applied config should always include every field that the applier has an opinion about.
 
 ### Clearing ManagedFields
 
