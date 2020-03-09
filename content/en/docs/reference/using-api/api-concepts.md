@@ -666,6 +666,11 @@ the managedFields, this will result in the managedFields being reset first and
 the other changes being processed afterwards. As a result the applier takes
 ownership of any fields updated in the same request.
 
+### Known Issues
+
+- There is a known issue with using Server Side Apply on sub-resource endpoints
+  where field ownership is not being updated [#88981](https://github.com/kubernetes/kubernetes/issues/88981). 
+
 ### Disabling the feature
 
 Server Side Apply is a beta feature, so it is enabled by default. To turn this
